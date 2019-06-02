@@ -1,0 +1,23 @@
+.container{
+    width: 800px;
+    height: 500px;
+    background: gray;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.item{
+    min-width:100px;
+    height: 100px;
+    background: darkred;
+    border: 3px solid red;
+    text-align: center;
+    border-radius: 10px;
+}
+.item:nth-child(1) {
+}
+
+.item:nth-child(3){
+}
+.item:nth-child(2){
+}
