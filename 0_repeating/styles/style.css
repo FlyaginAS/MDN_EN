@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    font: 1em/1 Arial, sans-serif;
+    font: 1em/1.2 Arial, sans-serif;
 }
 .header{
     font-size: 1.3rem;
@@ -45,4 +45,24 @@ body{
 }
 .site-content h1{
     color: darkgrey;
+}
+.portfolio-content ul{
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.portfolio-content ul li{
+    margin: 5px;
+}
+.portfolio-content a{
+    display:inline-block;
+    text-decoration: none;
+    background-color:white;
+    border: 5px solid white;
+}
+.portfolio-content a img{
+    border: 5px solid white;
+
 }
