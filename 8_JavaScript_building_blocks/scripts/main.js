@@ -4,6 +4,7 @@ let thumbBar = document.querySelector('.thumb-bar');
 
 let btn = document.querySelector('button');
 let overlay = document.querySelector('.overlay');
+let j=1;
 
 /* Looping through images */
 for(let i=1; i<6; i++){
@@ -21,6 +22,13 @@ function run(e) {
 
 /* Wiring up the Darken/Lighten button */
 btn.addEventListener('click', run2);
-function run2(e) {
+function run2() {
+    j++;
+    if(j%2==0){
+        overlay.style.backgroundColor='rgba(0,0,0, 0.5)';
+    } else {
+        overlay.style.backgroundColor='rgba(0,0,0, 0)';
+    }
+
 
 }
