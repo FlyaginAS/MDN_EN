@@ -1,30 +1,26 @@
 'use strict';
-let input = document.querySelector('.numberInput');
-let para = document.querySelector('p');
+let displayedImage = document.querySelector('.displayed-img');
+let thumbBar = document.querySelector('.thumb-bar');
 
-function squared(num){
-    return num*num;
-}
-function cubed(num){
-    return num*num*num;
-}
-function factorial(num){
-    let x=num;
-    while(x>1) {
-        num*=x-1;
-        x--;
-    }
+let btn = document.querySelector('button');
+let overlay = document.querySelector('.overlay');
 
-    return num;
+/* Looping through images */
+for(let i=1; i<6; i++){
+    let newImage = document.createElement('img');
+    newImage.setAttribute('src', `images/pic${i}.jpg`);
+    thumbBar.appendChild(newImage);
+}
+// from small to bid img handler
+thumbBar.addEventListener('click', run);
+function run(e) {
+    let small= e.target;
+    //console.log(small);
+    displayedImage.setAttribute('src', small.getAttribute('src'));
 }
 
-input.onchange= function(){
-   let num = input.value;
-   if(isNaN(num)){
-       para.textContent='You need to enter a number';
-   } else {
-       para.textContent = num + ' squared is ' + squared(num) + '. ' +
-           num + ' cubed is ' + cubed(num) + '. ' +
-           num + ' factorial is ' + factorial(num) + '.';
-   }
-};
+/* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', run2);
+function run2(e) {
+
+}
