@@ -1,33 +1,30 @@
 'use strict';
-function displayMessage(msgText, msgType) {
-    let html= document.querySelector('html');
-    let panel = document.createElement('div');
-    panel.setAttribute('class', 'msgBox');
-    html.appendChild(panel);
+let input = document.querySelector('.numberInput');
+let para = document.querySelector('p');
 
-    let msg = document.createElement('p');
-    msg.textContent= msgText;
-    panel.appendChild(msg);
-    let closeBtn = document.createElement('button');
-
-    closeBtn.textContent= 'x';
-    panel.appendChild(closeBtn);
-
-    closeBtn.onclick= function () {
-        panel.parentNode.removeChild(panel);
+function squared(num){
+    return num*num;
+}
+function cubed(num){
+    return num*num*num;
+}
+function factorial(num){
+    let x=num;
+    while(x>1) {
+        num*=x-1;
+        x--;
     }
-    if(msgType==='warning'){
-        msg.style.backgroundImage='url(../images/warning.png)';
-        panel.style.backgroundColor='red';
-    } else if(msgType==='chat'){
-        msg.style.backgroundImage='url(../images/chat.png)';
-        panel.style.backgroundColor='aqua';
-    } else{
-        msg.style.paddingLeft= '20px';
-    }
+
+    return num;
 }
 
-let btn = document.querySelector('button');
-btn.onclick=function () {
-    displayMessage('Brian: Hi there, how are you today?','chat');
+input.onchange= function(){
+   let num = input.value;
+   if(isNaN(num)){
+       para.textContent='You need to enter a number';
+   } else {
+       para.textContent = num + ' squared is ' + squared(num) + '. ' +
+           num + ' cubed is ' + cubed(num) + '. ' +
+           num + ' factorial is ' + factorial(num) + '.';
+   }
 };
