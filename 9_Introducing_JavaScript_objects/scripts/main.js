@@ -1,7 +1,4 @@
 'use strict';
 
-$('#my').css({
-    'color': 'red',
-    'background-color': 'yellow'
-});
-
+$('#want').prop('checked', true);
+$('#name').prop('disabled', false);
