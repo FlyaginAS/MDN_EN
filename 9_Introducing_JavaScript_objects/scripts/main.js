@@ -1,4 +1,7 @@
 'use strict';
-$(function () {
-    $('h2').css('color', 'red');
-});
+
+$('#content').css('color', 'red');
+$('section#content').css('color', 'blue');
+$('.intro').css('color','yellow');
+$('h3').css('background-color', 'grey');
+console.log($('#content').children());
